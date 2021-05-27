@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @RepositoryDefinition(domainClass = UserEntity.class,idClass = Long.class)
 public interface UserRepository{
-    public UserEntity findByUserId(Integer id);
+    public UserEntity findNickNameByUserId(Long id);
 }

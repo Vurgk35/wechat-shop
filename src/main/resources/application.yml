@@ -18,21 +18,26 @@ server:
   address:
 spring:
   datasource:
-    url: jdbc:log4jdbc:sqlserver://106.15.43.125:1433;DatabaseName=winmob3
-    username: sa
-    password: Yi2017Dat@
+#    url: jdbc:log4jdbc:sqlserver://106.15.43.125:1433;DatabaseName=winmob3
+    url: jdbc:log4jdbc:mysql:///wechat_shop?createDatabaseIfNotExist=true&amp;user=root&amp;password=&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false
+    username: root
+#    password: Yi2017Dat@
     driver-class-name: net.sf.log4jdbc.DriverSpy
+    tomcat:
+      initial-size: 1
 #    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
      hibernate:
         ddl-auto: update
         naming:
+#          strategy: org.hibernate.cfg.ImprovedNamingStrategy
           physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
      show-sql: true
      properties:
         hibernate.format_sql: true
-        hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+#        hibernate.dialect: cn.blbsz.dialect.MySQLServerDialect
+        hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 #     database: sql_server
 #     database-platform: SQL_SERVER
 

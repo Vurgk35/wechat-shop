@@ -45,9 +45,10 @@ public class QRCodeKit {
 
     public static void main(String[] args) throws IOException, NotFoundException{
         String data = "http://www.baidu.com";
-        File logoFile = new File("logo.png");
+        System.out.println(System.getProperty("user.dir"));
+        File logoFile = new File("src\\test\\java\\cn\\blbsz\\wechat\\zxing\\bg_img.jpg");
         BufferedImage image = QRCodeKit.createQRCodeWithLogo(data, logoFile);
-        ImageIO.write(image, "png", new File("result7.png"));
+        ImageIO.write(image, "jpg", new File("result7.png"));
         System.out.println("done");
     }
 
