@@ -1,7 +1,5 @@
 package cn.blbsz.shop.controller;
 
-import cn.blbsz.shop.entity.UserEntity;
-import cn.blbsz.shop.repository.UserRepository;
 import cn.blbsz.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -20,20 +18,15 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRepository userRepository;
 
-//    @RequestMapping("/user/{id}")
-    
-//    public List<Map<String, Object>> getUser(@PathVariable("id") Long id,Model model) {
-        @RequestMapping("/user/{id}")
-    	public String getUser(@PathVariable("id") Long id,Model model) {
-        UserEntity user = userRepository.findNickNameByUserId(id);
+    @RequestMapping("/user/{id}")
+    public List<Map<String, Object>> getUser(@PathVariable("id") Integer id) {
+        /*UserEntity user = userRepository.findByUserId(id);
         if (user != null) {
             model.addAttribute("user", user);
         }
-        return "user/info";
-//        return userService.getNewBankUserInfo(id);
+        return "user/info";*/
+        return userService.getNewBankUserInfo(id);
     }
 
 }
