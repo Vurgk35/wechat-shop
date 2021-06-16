@@ -19,7 +19,7 @@ server:
 spring:
   datasource:
 #    url: jdbc:log4jdbc:sqlserver://106.15.43.125:1433;DatabaseName=winmob3
-    url: jdbc:log4jdbc:mysql:///wechat_shop?createDatabaseIfNotExist=true&amp;user=root&amp;password=&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false
+    url: jdbc:log4jdbc:mysql://106.15.103.177:3306/wechat_shop?createDatabaseIfNotExist=true&amp;user=root&amp;password=&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false
     username: root
 #    password: Yi2017Dat@
     driver-class-name: net.sf.log4jdbc.DriverSpy
